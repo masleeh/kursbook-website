@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/contacts.css"><link rel="shortcut icon" href="images/icon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <nav class="nav">
+                    <div class="nav_logo">
+                        <h2 class="logo"><a href="index.html">KURSBOOK</a>
+                        </h2>
+                    </div>
+                    <ul class="nav_list">
+                        <li><a href="index.html" >Главная</a></li>
+                        <li><a href="articles/article1.html">Статьи</a></li>
+                        <li><a href="articles/fragments1.html">Фрагменты из книги</a></li>
+                        <li><a href="#!" class="active">Контакты</a></li>
+                    </ul>
+                    <button class="nav_toggle">
+                        <div class="nav_block"></div>
+                    </button>
+                    <div class="menu_ul">
+                        <ul class="nav_list_adapt">
+                            <li><a href="./index.html" class="active">Главная</a></li>
+                            <li><a href="articles/article1.html">Статьи</a></li>
+                            <li><a href="articles/fragments1.html">Фрагменты из книги</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="content">
+                <h1 class="contacts">Контакты</h1>
+            </div>
+            <ul class="fragments_list">
+                <li><a href="mailto:evngas@mail.ru">Почта</a></li>
+            </ul>
+            <h1 class="title_c">Публикации</h1>
+            <ul class="fragments_list">
+                <li><a target="_blank"  href="https://www.litres.ru/andrey-vasilevich-evsikov/kurs">Электронная книга на LitRes</a></li>
+                <li><a target="_blank" href="https://mybook.ru/author/andrej-evsikov/kurs-2/">Элеткронная книга на MyBook</a></li>
+            </ul>
+            <h1 class="title_c">Обсуждение</h1>
+            <ul class="fragments_list">
+                <li><a target="_blank" href="https://www.facebook.com/groups/444799883431102">Группа "Курс" на Facebook</a></li>
+                <li><a target="_blank" href="https://vk.com/public204991702">Сообщество "Курс" Вконтакте</a></li>
+                <li><a target="_blank" href="https://ok.ru/group/62932903592171">Группа "Курс" в Одноклассниках</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/aevsikow_kursbook/">Инстаграм</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCCiOUuU5jkkY2431-emYhqQ">Youtube</a></li>
+            </ul>
+        </div>
+    </header>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_bottom">
+                <nav class="nav_foot">
+                    <h1 class="footer_au">© Андрей Евсиков</h1>
+                    <ul class="nav_list_foot">
+                        <li><a target="_blank" href="https://www.facebook.com/groups/444799883431102">Facebook</a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCCiOUuU5jkkY2431-emYhqQ">Youtube</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/aevsikow_kursbook/">Instagram</a></li>
+                        <li><a target="_blank" href="https://vk.com/club204991702">Вконтакте</a></li>
+                        <li><a target="_blank" href="https://ok.ru/group/62932903592171">Одноклассники</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menu_btn = document.querySelector('.nav_toggle');
+        const adapt_menu = document.querySelector('.menu_ul')
+        const toggleButton = document.querySelector('.nav_toggle');
+        toggleButton.addEventListener('click', () => {
+        toggleButton.classList.toggle('toggle');
+}) ;
+
+        menu_btn.addEventListener('click', function() {
+            if (adapt_menu.classList.contains('open')) {
+                adapt_menu.classList.remove('open');
+            }
+            else {
+                adapt_menu.classList.add('open');
+            }
+        })
+    </script>
+</body>
+</html>
