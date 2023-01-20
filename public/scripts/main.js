@@ -7,12 +7,44 @@ toggleButton.addEventListener('click', () => {
 }) 
 
 
+const phoneMasking = document.getElementById('phone')
+let phoneLength = phoneMasking.value.length
+
+function masking() {
+    phoneMasking.oninput = () => {
+        if (phoneMasking.value.length > phoneLength) {
+            const maskedNumber = maskPhone(phoneMasking.value)
+            phoneMasking.value = maskedNumber
+            phoneLength = phoneMasking.value.length
+        }
+        phoneLength = phoneMasking.value.length
+    }
+}
+
+
+
+
+function maskPhone(phone) {
+    if (!phone) return phone
+    const maskedNumber = phone.replace(/[^\d]/g, '').slice(0, 11)
+    const vN = (number, array) => {
+        if (array[number] === undefined) {
+            return ''
+        }
+        else return array[number]
+    }
+
+    return (`+${vN(0, maskedNumber)} (${vN(1, maskedNumber)}${vN(2, maskedNumber)}${vN(3, maskedNumber)}) ${vN(4, maskedNumber)}${vN(5, maskedNumber)}${vN(6, maskedNumber)} ${vN(7, maskedNumber)}${vN(8, maskedNumber)} ${vN(9, maskedNumber)}${vN(10, maskedNumber)}`)
+}
+
+
 
 window.onload = init;
 
 function init() {
     doScroll();
     setTimeout(scroll, 500);
+    masking()
 }
 
 
